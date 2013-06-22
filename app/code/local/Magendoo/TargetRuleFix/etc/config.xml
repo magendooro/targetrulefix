@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Magendoo_TargetRuleFix>
+            <version>0.1.1</version>
+        </Magendoo_TargetRuleFix>
+    </modules>
+
+    <global>
+        <models>
+            <targetrulefix>
+                <class>Magendoo_TargetRuleFix_Model</class>
+                <resourceModel>targetrulefix_resource</resourceModel>
+            </targetrulefix>
+
+            <targetrulefix_resource>
+                <class>Magendoo_TargetRuleFix_Model_Resource</class>
+            </targetrulefix_resource>
+
+            <enterprise_targetrule>
+                <rewrite>
+                    <index>Magendoo_TargetRuleFix_Model_Index</index>
+                </rewrite>
+            </enterprise_targetrule>
+
+        </models>
+        <helpers>
+            <targetrulefix>
+                <class>Magendoo_TargetRuleFix_Helper</class>
+            </targetrulefix>
+        </helpers>
+    </global>
+
+
+    <crontab>
+            <jobs>
+                <targetrulefix_reindex>
+                    <schedule>
+                        <cron_expr>15 3 * * *</cron_expr>
+                    </schedule>
+                    <run>
+                        <model>targetrulefix/index::reindexAll</model>
+                    </run>
+                </targetrulefix_reindex>
+            </jobs>
+    </crontab>
+
+</config>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Magendoo_TargetRuleFix>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends><Enterprise_TargetRule /></depends>
+        </Magendoo_TargetRuleFix>
+    </modules>
+</config>
